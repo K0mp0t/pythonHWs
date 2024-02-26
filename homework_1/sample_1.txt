@@ -1,0 +1,4 @@
+Hello
+My name is Peter
+And today
+I am going my python homework

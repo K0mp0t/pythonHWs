@@ -1,0 +1,11 @@
+(pythonHWs) peter@idk:~/PycharmProjects/pythonHWs$ python nl.py sample_1.txt
+        1 Hello
+        2 My name is Peter
+        3 And today
+        4 I am going my python homework
+
+(pythonHWs) peter@idk:~/PycharmProjects/pythonHWs$ printf "Hello\nMy name is Peter\nAnd today\nI am going my python homework\n" | python nl.py
+        1 Hello
+        2 My name is Peter
+        3 And today
+        4 I am going my python homework

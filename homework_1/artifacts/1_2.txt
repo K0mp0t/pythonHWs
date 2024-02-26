@@ -1,0 +1,60 @@
+(pythonHWs) peter@idk:~/PycharmProjects/pythonHWs$ python tail.py sample_2.txt
+Oink-oink
+Blah-blah-blah
+Ow-ow-ow
+Oink-oink
+Blah-blah-blah
+Ow-ow-ow
+Oink-oink
+Blah-blah-blah
+Ow-ow-ow
+Oink-oink
+
+(pythonHWs) peter@idk:~/PycharmProjects/pythonHWs$ python tail.py sample_1.txt sample_1.txt
+==> sample_1.txt <==
+Hello
+My name is Peter
+And today
+I am going my python homework
+==> sample_1.txt <==
+Hello
+My name is Peter
+And today
+I am going my python homework
+
+(pythonHWs) peter@idk:~/PycharmProjects/pythonHWs$ python tail.py sample_1.txt sample_2.txt
+==> sample_1.txt <==
+Hello
+My name is Peter
+And today
+I am going my python homework
+==> sample_2.txt <==
+Oink-oink
+Blah-blah-blah
+Ow-ow-ow
+Oink-oink
+Blah-blah-blah
+Ow-ow-ow
+Oink-oink
+Blah-blah-blah
+Ow-ow-ow
+Oink-oink
+
+(pythonHWs) peter@idk:~/PycharmProjects/pythonHWs$ printf "A\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\nA\n" | python tail.py | nl -b a
+     1  A
+     2  A
+     3  A
+     4  A
+     5  A
+     6  A
+     7  A
+     8  A
+     9  A
+    10  A
+    11  A
+    12  A
+    13  A
+    14  A
+    15  A
+    16  A
+    17  A

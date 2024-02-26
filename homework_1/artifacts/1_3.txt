@@ -1,0 +1,11 @@
+(pythonHWs) peter@idk:~/PycharmProjects/pythonHWs$ cat sample_3.txt
+Hello there
+(pythonHWs) peter@idk:~/PycharmProjects/pythonHWs$ python wc.py sample_3.txt
+1 2 12 sample_3.txt
+(pythonHWs) peter@idk:~/PycharmProjects/pythonHWs$ printf "Hello there\n" | python wc.py
+1 2 12
+(pythonHWs) peter@idk:~/PycharmProjects/pythonHWs$ python wc.py sample_1.txt sample_2.txt sample_3.txt
+4 13 63 sample_1.txt
+15 15 170 sample_2.txt
+1 2 12 sample_3.txt
+20 30 245 total
