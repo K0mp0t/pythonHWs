@@ -1,0 +1,1 @@
+from .pylatexhw_modules import generate_latex_table_figure_wrapped, generate_latex_table_wrapped

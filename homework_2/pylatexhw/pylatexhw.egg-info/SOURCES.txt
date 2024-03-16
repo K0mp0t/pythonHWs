@@ -1,0 +1,7 @@
+setup.py
+pylatexhw/__init__.py
+pylatexhw/pylatexhw_modules.py
+pylatexhw.egg-info/PKG-INFO
+pylatexhw.egg-info/SOURCES.txt
+pylatexhw.egg-info/dependency_links.txt
+pylatexhw.egg-info/top_level.txt
