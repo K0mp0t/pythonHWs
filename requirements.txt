@@ -20,3 +20,7 @@ tk=8.6.12=h1ccaba5_0
 wheel=0.41.2=py38h06a4308_0
 xz=5.4.5=h5eee18b_0
 zlib=1.2.13=h5eee18b_0
+
+setuptools~=68.2.2
+pylatexhw~=0.0.8
+numpy~=1.24.3
