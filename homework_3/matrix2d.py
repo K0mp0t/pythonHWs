@@ -7,8 +7,10 @@ def cache_this(func):
 
     def wrapper(*args):
         if args in cache:
+            print(f'Using cache for {args}')
             return cache[args]
         else:
+            print(f'Calculating {args}')
             res = func(*args)
             cache[args] = res
             return res

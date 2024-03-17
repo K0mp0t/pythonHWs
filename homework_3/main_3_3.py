@@ -18,11 +18,11 @@ with open('artifacts/3_3/D.txt', 'w') as f:
     f.write(str(d))
 
 with open('artifacts/3_3/AB.txt', 'w') as f:
-    f.write(str(a * b))
+    f.write(str(a @ b))
 
 with open('artifacts/3_3/CD.txt', 'w') as f:
-    f.write(str(c * d))
+    f.write(str(c @ d))
 
 with open('artifacts/3_3/hash.txt', 'w') as f:
-    f.write(str(hash(a * b)) + '\n')
-    f.write(str(hash(c * d)) + '\n')
+    f.write(str(hash(a @ b)) + '\n')
+    f.write(str(hash(c @ d)) + '\n')
