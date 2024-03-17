@@ -20,7 +20,8 @@ def cache_this(func):
 
 class SumHashingMixin:
     def __hash__(self):
-        return sum(sum(row) for row in self._matrix) # хэш матрицы - ее сумма
+        # хэш матрицы - хэш ее строкового представления
+        return hash(str(self._matrix))
 
 
 class Matrix2D(SumHashingMixin):
