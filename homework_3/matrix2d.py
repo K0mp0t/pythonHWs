@@ -6,13 +6,14 @@ def cache_this(func):
     cache = {}
 
     def wrapper(*args):
-        if args in cache:
-            print(f'Using cache for {args}')
-            return cache[args]
+        args_cache = sum(map(hash, args))
+        if args_cache in cache:
+            print(f'Using cache for {args_cache}')
+            return cache[args_cache]
         else:
-            print(f'Calculating {args}')
+            print(f'Calculating {args_cache}')
             res = func(*args)
-            cache[args] = res
+            cache[args_cache] = res
             return res
 
     return wrapper
@@ -20,8 +21,8 @@ def cache_this(func):
 
 class SumHashingMixin:
     def __hash__(self):
-        # хэш матрицы - хэш ее строкового представления
-        return hash(str(self._matrix))
+        # хэш матрицы - сумма ее элементов
+        return sum(sum(row) for row in self._matrix)
 
 
 class Matrix2D(SumHashingMixin):
@@ -87,6 +88,6 @@ class Matrix2D(SumHashingMixin):
         return Matrix2D([[a * b for a, b in zip(row_a, row_b)] for row_a, row_b in zip(self._matrix, other._matrix)])
 
     def __str__(self) -> str:
-        s = "\n          ".join([str(row) for row in self._matrix])
-        return f'Matrix2D([{s}])'
+        s = "\n ".join([str(row) for row in self._matrix])
+        return f'[{s}]'
 
