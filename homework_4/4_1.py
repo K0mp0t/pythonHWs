@@ -1,5 +1,5 @@
-from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
-from concurrent.futures import wait as wait_for_features
+from threading import Thread
+from multiprocessing import Process
 import time
 
 N = 500000
@@ -25,19 +25,25 @@ if __name__ == '__main__':
     file.write(str(delta) + '\n')
 
     start = time.time()
-    futures = list()
-    with ThreadPoolExecutor(max_workers=10) as executor:
-        for _ in range(10):
-            futures.append(executor.submit(get_fibonacci, N))
+    workers = []
+    for _ in range(10):
+        workers.append(Thread(target=get_fibonacci, args=(N,)))
+    for worker in workers:
+        worker.start()
+    for worker in workers:
+        worker.join()
     delta = round(time.time() - start, 6)
     print(f'threaded call finished in {delta} seconds')
     file.write(str(delta) + '\n')
 
     start = time.time()
-    futures = list()
-    with ProcessPoolExecutor(max_workers=10) as executor:
-        for _ in range(10):
-            futures.append(executor.submit(get_fibonacci, N))
+    workers = []
+    for _ in range(10):
+        workers.append(Process(target=get_fibonacci, args=(N,)))
+    for worker in workers:
+        worker.start()
+    for worker in workers:
+        worker.join()
     delta = round(time.time() - start, 6)
     print(f'multiprocessing call finished in {delta} seconds')
     file.write(str(delta) + '\n')
